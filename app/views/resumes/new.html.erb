@@ -3,8 +3,9 @@
 <hr>
 
 <%= simple_form_for [@job, @resume] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :attachment %>
-  
-  <%= f.submit "送出" %>
+  <%= f.input :content, label: "内容" %>
+  <%= f.input :attachment, label: "附件" %>
+
+  <%= f.button :submit, "送出", class: 'btn btn-success' %>
+  <%= link_to("返回", job_path(@job), :class => "btn btn-default" ) %>
 <% end %>

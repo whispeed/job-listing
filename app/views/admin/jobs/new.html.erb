@@ -1,13 +1,15 @@
-<h1> Add a job </h1>
+<h1> 新建职缺 </h1>
+<hr />
 
 <%= simple_form_for [:admin,@job] do |f| %>
 
-<%= f.input :title %>
-<%= f.input :description %>
+<%= f.input :title, :label => "标题" %>
+<%= f.input :description, :label => "内容" %>
 <%= f.input :wage_lower_bound, :label => "薪资下限" %>
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email %>
-<%= f.input :is_hidden %>
+<%= f.input :contact_email, :label => "联络邮箱" %>
+<%= f.input :is_hidden, :label => "隐藏职缺" %>
 
-  <%= f.submit "Submit" %>
+<%= f.button :submit, "保存", class: 'btn btn-success' %>
+<%= link_to("返回", admin_jobs_path, :class => "btn btn-default" ) %>
 <% end %>
